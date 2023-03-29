@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('team_social_details', function (Blueprint $table) {
             $table->id();
+            $table->string('url');
+            $table->string('name');
             $table->timestamps();
         });
     }
