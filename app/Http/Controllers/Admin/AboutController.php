@@ -22,7 +22,8 @@ class AboutController extends Controller
        ]);
     }
     public function edit(){
-       
+       $data = About::first();
+       return view('admin.about.edit');
     }
     public function update(){
        

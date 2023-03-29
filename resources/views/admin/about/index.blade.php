@@ -7,19 +7,22 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
     @if($data->count()>0)
+    @foreach($data as $key => $value)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{$key+1}}</th>
+      <td>{{$value->title}}</td>
+      <td>{{$value->description}}</td>
+      <td> <a type="button" href="/admin/about/edit/{{$value->id}}" class="btn btn-primary update">update</a>
+      <a type="button" href="/admin/about/delete/{{$value->id}}" class="btn btn-danger delete">delete</a></td>
     </tr>
+    @endforeach
     @else
      <tr>
       <td><h1>No data found</h1></td>
