@@ -26,7 +26,7 @@ Route::group(['middleware' => ['auth'],'prefix' => 'admin/about'], function () {
     Route::controller(AboutController::class)->group(function () {
         Route::get('/', 'index')->name('index.user');
         Route::get('/add', 'add')->name('about.add');
-
+        Route::post('/store', 'store')->name('about.store');
     });
 });
 

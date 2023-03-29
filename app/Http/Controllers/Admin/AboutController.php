@@ -15,11 +15,14 @@ class AboutController extends Controller
     public function add(){
         return view('admin.about.add');
     }
-    public function store(){
-
+    public function store(Request $request){
+       About::create([
+        'title'=>$request->title,
+        'description'=>$request->desc
+       ]);
     }
     public function edit(){
-
+       
     }
     public function update(){
        
