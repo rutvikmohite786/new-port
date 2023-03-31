@@ -106,6 +106,7 @@
             <h2>Awesome Quality Services</h2>
         </div>
         <div class="row">
+        @foreach($service as $key => $value)
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
                 <div class="service-item">
                     <div class="service-icon">
@@ -119,46 +120,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fa fa-laptop-code"></i>
-                    </div>
-
-                    <div class="service-text">
-                        <h3>Web Development</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi facilis ornare velit non
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fab fa-android"></i>
-                    </div>
-                    <div class="service-text">
-                        <h3>Apps Design</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi facilis ornare velit non
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fab fa-apple"></i>
-                    </div>
-                    <div class="service-text">
-                        <h3>Apps Development</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi facilis ornare velit non
-                        </p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
