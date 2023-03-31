@@ -1,20 +1,29 @@
 @extends('layouts.admin')
 @section('content')
 <div class="container">
-<form method="post" action="{{route('service.store')}}">
+<form method="post" action="{{route('experience.store')}}">
   @csrf
   <div class="form-group">
-    <label for="title">Title</label>
+    <label for="title">Compony name</label>
+    <input name="cname" type="text" class="form-control" id="cname" placeholder="Enter compony name">
+  </div>
+  <div class="form-group">
+    <label for="image">Title</label>
     <input name="title" type="text" class="form-control" id="title" placeholder="Enter title">
   </div>
   <div class="form-group">
-    <label for="image">Image class</label>
-    <input name="image" type="text" class="form-control" id="image" placeholder="Enter class name">
+    <label for="image">Location</label>
+    <input name="location" type="text" class="form-control" id="location" placeholder="Enter location">
+  </div>
+  <div class="form-group">
+    <label for="image">Year</label>
+    <input name="year" type="text" class="form-control" id="year" placeholder="Enter year">
   </div>
   <div class="form-group">
     <label for="title">Description</label>
     <textarea name="desc" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
+ 
   <button type="submit" class="btn btn-primary">Save</button>
 </form>
 </div>

@@ -91,8 +91,6 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 </div>
 <!-- About End -->
@@ -156,28 +154,20 @@
             <h2>Working Experience</h2>
         </header>
         <div class="timeline">
-            <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+          @foreach($experience as $key => $value)
+            
+            <div class="timeline-item {{ $key%2==0 ? 'left' : 'right'}} wow {{$key%2==0 ? 'slideInLeft' : 'slideInRight'}}" data-wow-delay="0.1s">
                 <div class="timeline-text">
                     <div class="timeline-date">2021 - 2023</div>
-                    <h2>Web Developer(It Path Solutions)</h2>
-                    <h4>India, Gujarat ,Ahmedabd </h4>
+                    <h2>{{$value->title}}({{$value->compony_name}})</h2>
+                    <h4>{{$value->location}}</h4>
                     <p>
-                        Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus erat sagittis non. Ut blandit
-                        semper pretium.
+                      {{$value->description}}
                     </p>
                 </div>
             </div>
-            <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                <div class="timeline-text">
-                    <div class="timeline-date">2023 - present</div>
-                    <h2>Web Developer(Lemolite)</h2>
-                    <h4>Soft Agency, San Francisco, CA</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus erat sagittis non. Ut blandit
-                        semper pretium.
-                    </p>
-                </div>
-            </div>
+
+            @endforeach
         </div>
     </div>
 </div>

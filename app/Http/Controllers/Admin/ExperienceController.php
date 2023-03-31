@@ -13,9 +13,15 @@ class ExperienceController extends Controller
         return view('admin.experience.index',compact('data'));
     }
     public function add(){
-
+        return view('admin.experience.add');
     }
-    public function store(){
-
+    public function store(Request $request){
+        Experience::create([
+            'title'=>$request->title,
+            'description'=>$request->desc,
+            'company_name'=>$request->cname,
+            'location'=>$request->year,
+            'year'=>$request->year
+        ]);
     }
 }
