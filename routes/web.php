@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\TechnologyController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\ExperienceController;
+
 
 
 
@@ -48,6 +50,13 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/admin/service/add', 'add')->name('service.add');
         Route::get('/admin/service/edit', 'edit')->name('service.edit');
         Route::post('/admin/service/store', 'store')->name('service.store');
+    });
+
+    Route::controller(ExperienceController::class)->group(function () {
+        Route::get('/admin/experience', 'index')->name('index.experience');
+        Route::get('/admin/experience/add', 'add')->name('experience.add');
+        Route::get('/admin/experience/edit', 'edit')->name('experience.edit');
+        Route::post('/admin/experience/store', 'store')->name('experience.store');
     });
 });
 
