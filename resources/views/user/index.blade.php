@@ -38,14 +38,14 @@
                         <div class="typed-text">Back End Developer, Front End Developer</div>
                     </div>
                     <div class="hero-btn">
-                        <a class="btn" href="">Hire Me</a>
+                        <a class="btn" href="">Download CV</a>
                         <a class="btn" href="">Contact Me</a>
                     </div>
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 d-none d-md-block">
                 <div class="hero-image">
-                    <img src="img/hero.png" alt="Hero Image">
+                    <img src="{{ asset('user/img/hero.png')}}" alt="Hero Image">
                 </div>
             </div>
         </div>
@@ -59,7 +59,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="about-img">
-                    <img src="img/about.jpg" alt="Image">
+                    <img src="{{ asset('user/img/about.jpg') }}" alt="Image">
                 </div>
             </div>
             <div class="col-lg-6">
@@ -411,21 +411,22 @@
                 <div class="col-md-8">
                     <div class="contact-form">
                         <div id="success"></div>
-                        <form name="sentMessage" action="store.php" id="contactForm" novalidate="novalidate">
+                        <form name="sentMessage" action="{{route('contact.store')}}" id="contactForm" method="post" novalidate="novalidate">
+                        @csrf
                             <div class="control-group">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
                                 <p class="help-block"></p>
                             </div>
                             <div class="control-group">
-                                <input type="email" class="form-control" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
                                 <p class="help-block"></p>
                             </div>
                             <div class="control-group">
-                                <input type="text" class="form-control" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
                                 <p class="help-block"></p>
                             </div>
                             <div class="control-group">
-                                <textarea class="form-control" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                <textarea class="form-control" id="message" name="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
                                 <p class="help-block"></p>
                             </div>
                             <div>

@@ -83,6 +83,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::controller(HomePageController::class)->group(function () {
     Route::get('/', 'index')->name('portfolio.page');
+    Route::post('/contact/store', 'contactStore')->name('contact.store');
 });
 
 
