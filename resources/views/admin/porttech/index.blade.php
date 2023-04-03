@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="container">
-<a type="button" href="{{route('portfolio.add')}}" class="btn btn-primary">Add Data</a>
+<a type="button" href="{{route('porttech.add')}}" class="btn btn-primary">Add Data</a>
 <br>
 <table class="table">
   <thead>

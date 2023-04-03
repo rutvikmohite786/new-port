@@ -70,19 +70,19 @@
                     </div>
                     <div class="about-text">
                         <p>
-                         {{$about->description}}
+                            {{$about->description}}
                         </p>
                     </div>
                     <div class="skills">
                         @foreach($tech as $key => $value)
-                            
+
                         <div class="skill-name">
                             <p>{{$value->name}}</p>
                             <p>{{$value->percentage}}%</p>
                         </div>
                         @endforeach
 
-                   
+
                         <div class="progress">
                             <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
@@ -104,7 +104,7 @@
             <h2>Awesome Quality Services</h2>
         </div>
         <div class="row">
-        @foreach($service as $key => $value)
+            @foreach($service as $key => $value)
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
                 <div class="service-item">
                     <div class="service-icon">
@@ -154,15 +154,15 @@
             <h2>Working Experience</h2>
         </header>
         <div class="timeline">
-          @foreach($experience as $key => $value)
-            
+            @foreach($experience as $key => $value)
+
             <div class="timeline-item {{ $key%2==0 ? 'left' : 'right'}} wow {{$key%2==0 ? 'slideInLeft' : 'slideInRight'}}" data-wow-delay="0.1s">
                 <div class="timeline-text">
                     <div class="timeline-date">2021 - 2023</div>
                     <h2>{{$value->title}}({{$value->compony_name}})</h2>
                     <h4>{{$value->location}}</h4>
                     <p>
-                      {{$value->description}}
+                        {{$value->description}}
                     </p>
                 </div>
             </div>
@@ -205,84 +205,32 @@
             <div class="col-12">
                 <ul id="portfolio-filter">
                     <li data-filter="*" class="filter-active">All</li>
-                    <li data-filter=".filter-1">Web Design</li>
-                    <li data-filter=".filter-2">Web Development</li>
-                    <li data-filter=".filter-3">Portfolio</li>
+                    @foreach($porttech as $key => $value)
+                    <li data-filter=".{{$value->name}}">{{$value->name}}</li>
+
+                    @endforeach
                 </ul>
             </div>
         </div>
         <div class="row portfolio-container">
+            @foreach($portfolio as $key => $value)
 
-            <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
+            <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item {{$value->techport->name}} wow fadeInUp" data-wow-delay="0.0s">
                 <div class="portfolio-wrap">
                     <div class="portfolio-img ">
                         <img src="img/portfolio-1.jpg" alt="Image">
                     </div>
 
                     <div class="portfolio-text bt-model">
-                        <h3>eCommerce Website</h3>
+                        <h3>{{$value->title}}</h3>
                         <!-- <a class="btn" href="img/portfolio-1.jpg" data-lightbox="portfolio">+</a> -->
                         <a class="btn" data-toggle="modal" data-target="#exampleModal">+</a>
                     </div>
                 </div>
 
             </div>
+            @endforeach
 
-            <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="portfolio-wrap">
-                    <div class="portfolio-img">
-                        <img src="img/portfolio-2.jpg" alt="Image">
-                    </div>
-                    <div class="portfolio-text">
-                        <h3>Product Landing Page</h3>
-                        <a class="btn" href="img/portfolio-2.jpg" data-lightbox="portfolio">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-3 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="portfolio-wrap">
-                    <div class="portfolio-img">
-                        <img src="img/portfolio-3.jpg" alt="Image">
-                    </div>
-                    <div class="portfolio-text">
-                        <h3>JavaScript quiz game</h3>
-                        <a class="btn" href="img/portfolio-3.jpg" data-lightbox="portfolio">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.6s">
-                <div class="portfolio-wrap">
-                    <div class="portfolio-img">
-                        <img src="img/portfolio-4.jpg" alt="Image">
-                    </div>
-                    <div class="portfolio-text">
-                        <h3>JavaScript drawing</h3>
-                        <a class="btn" href="img/portfolio-4.jpg" data-lightbox="portfolio">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.8s">
-                <div class="portfolio-wrap">
-                    <div class="portfolio-img">
-                        <img src="img/portfolio-5.jpg" alt="Image">
-                    </div>
-                    <div class="portfolio-text">
-                        <h3>Social Mobile Apps</h3>
-                        <a class="btn" href="img/portfolio-5.jpg" data-lightbox="portfolio">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-3 wow fadeInUp" data-wow-delay="1s">
-                <div class="portfolio-wrap">
-                    <div class="portfolio-img">
-                        <img src="img/portfolio-6.jpg" alt="Image">
-                    </div>
-                    <div class="portfolio-text">
-                        <h3>Company Website</h3>
-                        <a class="btn" href="img/portfolio-6.jpg" data-lightbox="portfolio">+</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>

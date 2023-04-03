@@ -7,6 +7,8 @@ use App\Models\About;
 use App\Models\Technology;
 use App\Models\Service;
 use App\Models\Experience;
+use App\Models\PortTech;
+use App\Models\Portfolio;
 
 class HomePageController extends Controller
 {
@@ -15,6 +17,8 @@ class HomePageController extends Controller
         $tech = Technology::all();
         $service = Service::all();
         $experience = Experience::all();
-        return view('user.index',compact('about','tech','service','experience'));
+        $porttech = PortTech::all();
+        $portfolio = Portfolio::with('techport')->get();
+        return view('user.index',compact('about','tech','service','experience','porttech','portfolio'));
     }
 }

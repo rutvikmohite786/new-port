@@ -3,10 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\TechnologyController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ExperienceController;
+use App\Http\Controllers\Admin\PortTechController;
+use App\Http\Controllers\Admin\PortfolioController;
+
+
 
 
 
@@ -57,6 +60,24 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/admin/experience/add', 'add')->name('experience.add');
         Route::get('/admin/experience/edit', 'edit')->name('experience.edit');
         Route::post('/admin/experience/store', 'store')->name('experience.store');
+    });
+    Route::controller(PortTechController::class)->group(function () {
+        Route::get('/admin/port/tech', 'index')->name('index.porttech');
+        Route::get('/admin/port/tech/add', 'add')->name('porttech.add');
+        Route::get('/admin/port/tech/edit', 'edit')->name('porttech.edit');
+        Route::post('/admin/port/tech/store', 'store')->name('porttech.store');
+    });
+    Route::controller(PortTechController::class)->group(function () {
+        Route::get('/admin/port/tech', 'index')->name('index.porttech');
+        Route::get('/admin/port/tech/add', 'add')->name('porttech.add');
+        Route::get('/admin/port/tech/edit', 'edit')->name('porttech.edit');
+        Route::post('/admin/port/tech/store', 'store')->name('porttech.store');
+    });
+    Route::controller(PortfolioController::class)->group(function () {
+        Route::get('/admin/portfolio', 'index')->name('index.portfolio');
+        Route::get('/admin/portfolio/add', 'add')->name('portfolio.add');
+        Route::get('/admin/portfolio/edit', 'edit')->name('portfolio.edit');
+        Route::post('/admin/portfolio/store', 'store')->name('portfolio.store');
     });
 });
 
