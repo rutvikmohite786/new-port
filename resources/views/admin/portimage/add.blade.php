@@ -1,18 +1,14 @@
 @extends('layouts.admin')
 @section('content')
 <div class="container">
-<form method="post" action="{{route('portfolio.store')}}" enctype="multipart/form-data">
+<form method="post" action="{{route('portfolio.image.store')}}" enctype="multipart/form-data">
   @csrf
   <div class="form-group">
-    <label for="title">Title</label>
-    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title">
-  </div>
-  <div class="form-group">
-    <label for="tech">Example select</label>
-    <select class="form-control" id="tech" name="tech">
-      <option>Please select tech</option>
+    <label for="port">select portfolio</label>
+    <select class="form-control" id="port" name="port_id">
+      <option>Please select portfolio</option>
       @foreach($data as $key => $value)
-      <option value="{{$value->id}}">{{$value->name}}</option>
+      <option value="{{$value->id}}">{{$value->title}}</option>
       @endforeach
     </select>
   </div>

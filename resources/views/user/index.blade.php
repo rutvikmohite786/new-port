@@ -1,5 +1,6 @@
 @extends('layouts.user')
 @section('content')
+
 <!-- Nav Bar Start -->
 <div class="navbar navbar-expand-lg bg-light navbar-light">
     <div class="container-fluid">
@@ -218,7 +219,7 @@
             <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item {{$value->techport->name}} wow fadeInUp" data-wow-delay="0.0s">
                 <div class="portfolio-wrap">
                     <div class="portfolio-img ">
-                        <img src="img/portfolio-1.jpg" alt="Image">
+                        <img src="{{asset('images/portfolio'.'/'.$value->image)}}" alt="Image" class="imageport">
                     </div>
 
                     <div class="portfolio-text bt-model">
@@ -250,7 +251,7 @@
                 facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra
                 quis sem. Curabitur non nisl nec nisi scelerisque maximus.
             </p>
-            <a class="btn">Order Now</a>
+            <a class="btn">Contact Now</a>
         </div>
     </div>
 </div>
@@ -316,16 +317,18 @@
             <h2>Expert Team Members</h2>
         </div>
         <div class="row">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
+            @foreach($team as $key => $value)
+
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="{{$key}}s">
                 <div class="team-item">
                     <div class="team-img">
-                        <img src="img/team-1.jpg" alt="Image">
+                        <img src="{{asset('images/team'.'/'.$value->image)}}" alt="Image" class="imageteam">
                     </div>
                     <div class="team-text">
-                        <h2>Mollie Ross</h2>
-                        <h4>Web Designer</h4>
+                        <h2>{{$value->name}}</h2>
+                        <h4>{{$value->designation}}</h4>
                         <p>
-                            Lorem ipsum dolor sit amet consec adipis elit. Etiam accum lacus
+                        {{$value->description}}
                         </p>
                         <div class="team-social">
                             <a class="btn" href=""><i class="fab fa-twitter"></i></a>
@@ -336,66 +339,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="team-item">
-                    <div class="team-img">
-                        <img src="img/team-2.jpg" alt="Image">
-                    </div>
-                    <div class="team-text">
-                        <h2>Dylan Adams</h2>
-                        <h4>Web Developer</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consec adipis elit. Etiam accum lacus
-                        </p>
-                        <div class="team-social">
-                            <a class="btn" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="team-item">
-                    <div class="team-img">
-                        <img src="img/team-3.jpg" alt="Image">
-                    </div>
-                    <div class="team-text">
-                        <h2>Jennifer Page</h2>
-                        <h4>Apps Designer</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consec adipis elit. Etiam accum lacus
-                        </p>
-                        <div class="team-social">
-                            <a class="btn" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
-                <div class="team-item">
-                    <div class="team-img">
-                        <img src="img/team-4.jpg" alt="Image">
-                    </div>
-                    <div class="team-text">
-                        <h2>Josh Dunn</h2>
-                        <h4>Apps Developer</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet consec adipis elit. Etiam accum lacus
-                        </p>
-                        <div class="team-social">
-                            <a class="btn" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
         </div>
     </div>
 </div>
@@ -412,7 +357,7 @@
                     <div class="contact-form">
                         <div id="success"></div>
                         <form name="sentMessage" action="{{route('contact.store')}}" id="contactForm" method="post" novalidate="novalidate">
-                        @csrf
+                            @csrf
                             <div class="control-group">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
                                 <p class="help-block"></p>

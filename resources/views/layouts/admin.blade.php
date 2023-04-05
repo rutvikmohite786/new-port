@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard</title>
+    <title>Rutvikdev | Dashboard</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -232,7 +232,7 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item">
+                                <li class="nav-item openclass">
                                     <a href="pages/mailbox/mailbox.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Inbox</p>
@@ -252,7 +252,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item openclass">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
@@ -262,57 +262,51 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/examples/invoice.html" class="nav-link">
+                                    <a href="{{route('index.user')}}" class="nav-link  {{ (request()->is('admin/about*')) || (request()->is('admin/about')) ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Invoice</p>
+                                        <p>About</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/profile.html" class="nav-link">
+                                    <a href="{{route('index.service')}}" class="nav-link {{ (request()->is('admin/service*')) || (request()->is('admin/service')) ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Profile</p>
+                                        <p>Services</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/e-commerce.html" class="nav-link">
+                                    <a href="{{route('index.experience')}}" class="nav-link {{ (request()->is('admin/experience*')) || (request()->is('admin/experience')) ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>E-commerce</p>
+                                        <p>Experience</p>
+                                    </a>
+                                </li>
+                                 <li class="nav-item">
+                                    <a href="{{route('index.porttech')}}" class="nav-link {{ (request()->is('admin/port/tech*')) || (request()->is('admin/port/tech')) ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Portfolio Tech</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/projects.html" class="nav-link">
+                                    <a href="{{route('index.portfolio')}}" class="nav-link {{ (request()->is('admin/portfolio*')) || (request()->is('admin/portfolio')) ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Projects</p>
+                                        <p>Portfolio</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/project-add.html" class="nav-link">
+                                    <a href="{{route('index.portfolio.image')}}" class="nav-link {{ (request()->is('admin/portfolio/image*')) || (request()->is('admin/portfolio/image')) ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Project Add</p>
+                                        <p>Portfolio images</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('index.team')}}" class="nav-link  {{ (request()->is('admin/team*')) || (request()->is('admin/team')) ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Team </p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="pages/examples/project-edit.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Project Edit</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/examples/project-detail.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Project Detail</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/examples/contacts.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Contacts</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/examples/faq.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>FAQ</p>
+                                        <p>Blog</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -391,5 +385,8 @@
     <script src="{{ asset('dist/js/demo.js') }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
+
+    @yield('footer')
+
 </body>
 </html>

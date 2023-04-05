@@ -1589,3 +1589,12 @@ a:focus {
         padding: 0 5px;
     }
 }
+
+.imageport{
+    width: 230px !important;
+    height: 230px !important;
+}
+.imageteam{
+    width: 300px !important;
+    height: 300px !important;
+}

@@ -28,7 +28,6 @@ class PortfolioController extends Controller
               $save->title  = $request->title;
               $save->port_tech_id = $request->tech;
               $save->save();
-            
         }
 
     }

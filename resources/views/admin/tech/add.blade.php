@@ -15,3 +15,6 @@
 </form>
 </div>
 @endsection
+@section('footer')
+<script src="{{asset('js/page.js')}}"></script>
+@endsection
