@@ -107,8 +107,29 @@
     
 })(jQuery);
 
-
-
 console.log('enter')
+$(".portdata").click(function() {
+    let id = $(this).data('id')
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.ajax({
+        type: "post"
+        , url: '/detail/portfolio'
+        , data: {
+            'id': id
+        }
+        , success: function(data) {
+           $('.modaladd').html(data.html)
+           $('#exampleModal').modal('show'); 
+
+        }
+        , error: function(data) {
+            console.log(data)
+        }
+    });
+});
 
 

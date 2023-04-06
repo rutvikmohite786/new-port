@@ -78,10 +78,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/admin/portfolio/store', 'store')->name('portfolio.store');
     });
     Route::controller(PortfolioImageController::class)->group(function () {
-        Route::get('/admin/portfolio/image', 'index')->name('index.portfolio.image');
-        Route::get('/admin/portfolio/image/add', 'add')->name('portfolio.image.add');
-        Route::get('/admin/portfolio/image/edit', 'edit')->name('portfolio.image.edit');
-        Route::post('/admin/portfolio/image/store', 'store')->name('portfolio.image.store');
+        Route::get('/admin/port/image', 'index')->name('index.portfolio.image');
+        Route::get('/admin/port/image/add', 'add')->name('portfolio.image.add');
+        Route::get('/admin/port/image/edit', 'edit')->name('portfolio.image.edit');
+        Route::post('/admin/port/image/store', 'store')->name('portfolio.image.store');
     });
     Route::controller(TeamController::class)->group(function () {
         Route::get('/admin/team', 'index')->name('index.team');
@@ -94,6 +94,10 @@ Route::group(['middleware' => 'auth'], function () {
 Route::controller(HomePageController::class)->group(function () {
     Route::get('/', 'index')->name('portfolio.page');
     Route::post('/contact/store', 'contactStore')->name('contact.store');
+});
+
+Route::controller(PortfolioController::class)->group(function () {
+    Route::post('/detail/portfolio', 'portfolioDetail')->name('portfolio.detail');
 });
 
 

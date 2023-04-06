@@ -25,6 +25,13 @@
     <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+
+    <style>
+    .adminportimage{
+        width:230px;
+        height:230px;
+    }
+    </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
@@ -292,7 +299,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('index.portfolio.image')}}" class="nav-link {{ (request()->is('admin/portfolio/image*')) || (request()->is('admin/portfolio/image')) ? 'active' : '' }}">
+                                    <a href="{{route('index.portfolio.image')}}" class="nav-link {{ (request()->is('admin/port/image*')) || (request()->is('admin/port/image')) ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Portfolio images</p>
                                     </a>

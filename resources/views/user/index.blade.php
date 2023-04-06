@@ -126,26 +126,9 @@
 <!-- Service End -->
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
+<div class="modaladd">
 
+</div>
 
 <!-- Experience Start -->
 <div class="experience" id="experience">
@@ -225,7 +208,7 @@
                     <div class="portfolio-text bt-model">
                         <h3>{{$value->title}}</h3>
                         <!-- <a class="btn" href="img/portfolio-1.jpg" data-lightbox="portfolio">+</a> -->
-                        <a class="btn" data-toggle="modal" data-target="#exampleModal">+</a>
+                        <a class="btn portdata" data-id="{{$value->id}}">+</a>
                     </div>
                 </div>
 
@@ -482,4 +465,9 @@
     <div class="loader"></div>
 </div>
 
+@endsection
+@section('footer')
+<script>
+console.log('dataft')
+</script>
 @endsection
