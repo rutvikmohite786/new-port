@@ -39,10 +39,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['middleware' => 'auth'], function () {
     Route::controller(AboutController::class)->group(function () {
-        Route::get('admin/about', 'index')->name('index.user');
+        Route::get('admin/about', 'index')->name('index.about');
         Route::get('admin/about/add', 'add')->name('about.add');
-        Route::get('admin/about/edit', 'edit')->name('about.edit');
+        Route::get('admin/about/edit/{id}', 'edit')->name('about.edit');
         Route::post('admin/about/store', 'store')->name('about.store');
+        Route::post('admin/about/update', 'update')->name('about.update');
+        Route::get('admin/about/delete/{id}', 'delete')->name('about.delete');
+
+
     });
 
     Route::controller(TechnologyController::class)->group(function () {
@@ -55,8 +59,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::controller(ServiceController::class)->group(function () {
         Route::get('/admin/service', 'index')->name('index.service');
         Route::get('/admin/service/add', 'add')->name('service.add');
-        Route::get('/admin/service/edit', 'edit')->name('service.edit');
+        Route::get('/admin/service/edit/{id}', 'edit')->name('service.edit');
         Route::post('/admin/service/store', 'store')->name('service.store');
+        Route::post('admin/service/update', 'update')->name('service.update');
+        Route::get('admin/service/delete/{id}', 'delete')->name('service.delete');
     });
 
     Route::controller(ExperienceController::class)->group(function () {

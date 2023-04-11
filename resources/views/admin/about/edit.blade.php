@@ -1,15 +1,16 @@
 @extends('layouts.admin')
 @section('content')
 <div class="container">
-<form method="post" action="{{route('about.store')}}">
+<form method="post" action="{{route('about.update')}}" id="aboutform">
+ <input  value="{{$data->id}}" type="hidden" name="id">
   @csrf
   <div class="form-group">
     <label for="title">Title</label>
-    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title">
+    <input name="title" type="text" value="{{$data->title}}" class="form-control" id="title" placeholder="Enter title">
   </div>
   <div class="form-group">
     <label for="title">Description</label>
-    <textarea name="desc" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea name="desc" class="form-control" value="" id="exampleFormControlTextarea1" rows="3">{{$data->description}}</textarea>
   </div>
   <button type="submit" class="btn btn-primary">Update</button>
 </form>
@@ -17,4 +18,6 @@
 @endsection
 @section('footer')
 <script src="{{asset('js/page.js')}}"></script>
+<script src="{{asset('js/about.js')}}"></script>
+
 @endsection

@@ -193,7 +193,7 @@
                         <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block">{{auth()->user()->name}}</a>
                     </div>
                 </div>
 
@@ -269,7 +269,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('index.user')}}" class="nav-link  {{ (request()->is('admin/about*')) || (request()->is('admin/about')) ? 'active' : '' }}">
+                                    <a href="{{route('index.about')}}" class="nav-link  {{ (request()->is('admin/about*')) || (request()->is('admin/about')) ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>About</p>
                                     </a>
@@ -392,6 +392,8 @@
     <script src="{{ asset('dist/js/demo.js') }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+
 
     @yield('footer')
 

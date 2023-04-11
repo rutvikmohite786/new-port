@@ -21,5 +21,22 @@ class ServiceController extends Controller
             'image'=>$request->image,
             'description'=>$request->desc
         ]);
+        return redirect()->route('index.service')->with('message','added');
+    }
+    public function edit($id){
+        $data = Service::find($id);
+        return view('admin.service.edit',compact('data'));
+    }
+    public function update(Request $request){
+        Service::where('id',$request->id)->update([
+            'title'=>$request->title,
+            'image'=>$request->image,
+            'description'=>$request->desc
+        ]);
+        return redirect()->route('index.service')->with('message','updated');
+    }
+    public function delete($id){
+        Service::find($id)->delete();
+        return redirect()->route('index.service')->with('error','data has been delete');
     }
 }
