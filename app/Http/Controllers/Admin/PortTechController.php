@@ -20,4 +20,13 @@ class PortTechController extends Controller
           'name'=>$request->name
         ]);
     }
+    public function edit($id){
+      $data = PortTech::find($id);
+      return view('admin.porttech.edit',compact('data'));
+    }
+    public function update(Request $request){
+       PortTech::where('id',$request->id)->update([
+          'name'=>$request->name
+       ]);
+    }
 }

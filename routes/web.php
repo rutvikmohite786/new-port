@@ -74,8 +74,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::controller(PortTechController::class)->group(function () {
         Route::get('/admin/port/tech', 'index')->name('index.porttech');
         Route::get('/admin/port/tech/add', 'add')->name('porttech.add');
-        Route::get('/admin/port/tech/edit', 'edit')->name('porttech.edit');
+        Route::get('/admin/port/tech/edit/{id}', 'edit')->name('porttech.edit');
         Route::post('/admin/port/tech/store', 'store')->name('porttech.store');
+        Route::post('/admin/port/tech/update', 'update')->name('porttech.update');
     });
     Route::controller(PortfolioController::class)->group(function () {
         Route::get('/admin/portfolio', 'index')->name('index.portfolio');
