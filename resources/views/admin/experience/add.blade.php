@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="container">
-<form method="post" action="{{route('experience.store')}}">
+<form method="post" action="{{route('experience.store')}}" id="experienceform">
   @csrf
   <div class="form-group">
     <label for="title">Compony name</label>
@@ -30,4 +30,5 @@
 @endsection
 @section('footer')
 <script src="{{asset('js/page.js')}}"></script>
+<script src="{{asset('js/experience.js')}}"></script>
 @endsection

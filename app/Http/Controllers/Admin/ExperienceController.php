@@ -20,8 +20,27 @@ class ExperienceController extends Controller
             'title'=>$request->title,
             'description'=>$request->desc,
             'company_name'=>$request->cname,
-            'location'=>$request->year,
+            'location'=>$request->location,
             'year'=>$request->year
         ]);
+        return redirect()->route('index.experience')->with('message','added');
+    }
+    public function edit($id){
+       $data = Experience::find($id);
+       return view('admin.experience.edit',compact('data'));
+    }
+    public function update(Request $request){
+        Experience::where('id',$request->id)->update([
+            'title'=>$request->title,
+            'description'=>$request->desc,
+            'company_name'=>$request->cname,
+            'location'=>$request->location,
+            'year'=>$request->year
+        ]);
+        return redirect()->route('index.experience')->with('message','added');
+    }
+    public function delete($id){
+        Experience::where('id',$id)->delete();
+        return redirect()->route('index.experience')->with('error','deleted');
     }
 }

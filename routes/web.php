@@ -12,12 +12,6 @@ use App\Http\Controllers\Admin\PortfolioImageController;
 use App\Http\Controllers\Admin\TeamController;
 
 
-
-
-
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,10 +22,6 @@ use App\Http\Controllers\Admin\TeamController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Auth::routes(['register' => false]);
 
@@ -45,8 +35,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('admin/about/store', 'store')->name('about.store');
         Route::post('admin/about/update', 'update')->name('about.update');
         Route::get('admin/about/delete/{id}', 'delete')->name('about.delete');
-
-
     });
 
     Route::controller(TechnologyController::class)->group(function () {
@@ -68,8 +56,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::controller(ExperienceController::class)->group(function () {
         Route::get('/admin/experience', 'index')->name('index.experience');
         Route::get('/admin/experience/add', 'add')->name('experience.add');
-        Route::get('/admin/experience/edit', 'edit')->name('experience.edit');
         Route::post('/admin/experience/store', 'store')->name('experience.store');
+        Route::get('/admin/experience/edit/{id}', 'edit')->name('experience.edit');
+        Route::post('admin/experience/update', 'update')->name('experience.update');
+        Route::get('admin/experience/delete/{id}', 'delete')->name('experience.delete');
     });
     Route::controller(PortTechController::class)->group(function () {
         Route::get('/admin/port/tech', 'index')->name('index.porttech');
@@ -77,6 +67,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/admin/port/tech/edit/{id}', 'edit')->name('porttech.edit');
         Route::post('/admin/port/tech/store', 'store')->name('porttech.store');
         Route::post('/admin/port/tech/update', 'update')->name('porttech.update');
+        Route::get('admin/port/tech/delete/{id}', 'delete')->name('porttech.delete');
     });
     Route::controller(PortfolioController::class)->group(function () {
         Route::get('/admin/portfolio', 'index')->name('index.portfolio');

@@ -19,6 +19,7 @@ class PortTechController extends Controller
         PortTech::create([
           'name'=>$request->name
         ]);
+        return redirect()->route('index.porttech')->with('message','added');
     }
     public function edit($id){
       $data = PortTech::find($id);
@@ -28,5 +29,10 @@ class PortTechController extends Controller
        PortTech::where('id',$request->id)->update([
           'name'=>$request->name
        ]);
+       return redirect()->route('index.porttech')->with('message','updated');
+    }
+    public function delete($id){
+      PortTech::where('id',$id)->delete();
+      return redirect()->route('index.porttech')->with('error','delete');
     }
 }
