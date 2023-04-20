@@ -21,8 +21,8 @@
       <td>{{$value->title}}</td>
       <td>{{isset($value->techport) ? $value->techport->name : ''}}</td>
       <td><img src="{{asset('images/portfolio'.'/'.$value->image)}}" alt="Image" class="adminportimage"></td>
-      <td> <a type="button" href="/admin/about/edit/{{$value->id}}" class="btn btn-primary update">update</a>
-      <a type="button" href="/admin/about/delete/{{$value->id}}" class="btn btn-danger delete">delete</a></td>
+      <td> <a type="button" href="/admin/portfolio/edit/{{$value->id}}" class="btn btn-primary update">edit</a>
+      <a type="button" href="/admin/portfolio/delete/{{$value->id}}" class="btn btn-danger delete">delete</a></td>
     </tr>
     @endforeach
     @else

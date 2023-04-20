@@ -72,8 +72,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::controller(PortfolioController::class)->group(function () {
         Route::get('/admin/portfolio', 'index')->name('index.portfolio');
         Route::get('/admin/portfolio/add', 'add')->name('portfolio.add');
-        Route::get('/admin/portfolio/edit', 'edit')->name('portfolio.edit');
+        Route::get('/admin/portfolio/edit/{id}', 'edit')->name('portfolio.edit');
         Route::post('/admin/portfolio/store', 'store')->name('portfolio.store');
+
     });
     Route::controller(PortfolioImageController::class)->group(function () {
         Route::get('/admin/port/image', 'index')->name('index.portfolio.image');
