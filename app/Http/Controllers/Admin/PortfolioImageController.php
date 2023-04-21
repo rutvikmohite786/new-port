@@ -11,7 +11,7 @@ class PortfolioImageController extends Controller
 {
     public function index()
     {
-        $data = PortfolioImage::all();
+        $data = PortfolioImage::with('portfolio')->get();
         return view('admin.portimage.index', compact('data'));
     }
     public function add()
@@ -30,5 +30,15 @@ class PortfolioImageController extends Controller
             $save->portfolio_id = $request->port_id;
             $save->save();
         }
+        return redirect()->route('index.portfolio.image')->with('message','added');
+    }
+    public function edit($id){
+        $image = PortfolioImage::with('portfolio')->first();
+        $data = Portfolio::all();
+        return view('admin.portimage.edit', compact('data','image'));
+    }
+    public function delete($id){
+        PortfolioImage::where('id',$id)->delete();
+        return redirect()->route('index.portfolio.image')->with('error','Deleted');
     }
 }

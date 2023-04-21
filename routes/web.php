@@ -81,6 +81,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/admin/port/image/add', 'add')->name('portfolio.image.add');
         Route::get('/admin/port/image/edit', 'edit')->name('portfolio.image.edit');
         Route::post('/admin/port/image/store', 'store')->name('portfolio.image.store');
+        Route::get('/admin/port/image/edit/{id}', 'edit')->name('portfolio.image.edit');
+        Route::get('admin/port/image/delete/{id}', 'delete')->name('portfolio.image.delete');
     });
     Route::controller(TeamController::class)->group(function () {
         Route::get('/admin/team', 'index')->name('index.team');
