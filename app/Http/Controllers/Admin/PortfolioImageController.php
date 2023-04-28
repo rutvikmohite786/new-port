@@ -28,9 +28,21 @@ class PortfolioImageController extends Controller
             $save = new PortfolioImage();
             $save->image = $name;
             $save->portfolio_id = $request->port_id;
-            $save->save();
+            $save->save(); 
         }
         return redirect()->route('index.portfolio.image')->with('message','added');
+    }
+    public function update(Request $request){
+        $data = PortfolioImage::find($request->id);
+        if ($request->image != null) {
+            $name = time() . '.' . $request->image->extension();
+            $destinationPath = 'images/portfolio';
+            $request->image->move(public_path($destinationPath), $name);
+            $data->image = $name;
+        }
+        $data->portfolio_id = $request->port_id;
+        $data->save();
+        return redirect()->route('index.portfolio.image')->with('message','updated');
     }
     public function edit($id){
         $image = PortfolioImage::with('portfolio')->first();

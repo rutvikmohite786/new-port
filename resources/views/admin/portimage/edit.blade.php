@@ -1,14 +1,15 @@
 @extends('layouts.admin')
 @section('content')
 <div class="container">
-<form method="post" action="{{route('portfolio.image.store')}}" enctype="multipart/form-data" id="portfolioimg">
+<form method="post" action="{{route('portfolio.image.update')}}" enctype="multipart/form-data" id="portfolioimgedit">
+<input type="hidden" value="{{$image->id}}" name="id">
   @csrf
   <div class="form-group">
     <label for="port">select portfolio</label>
     <select class="form-control" id="port" name="port_id">
       <option value="">Please select portfolio</option>
       @foreach($data as $key => $value)
-      <option value="{{$value->id}}">{{$value->title}}</option>
+      <option value="{{$value->id}}" {{$value->id==$image->portfolio->id ? 'selected' : ''}}>{{$value->title}}</option>
       @endforeach
     </select>
   </div>
