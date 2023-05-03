@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="container">
-<form method="post" action="{{route('experience.store')}}">
+<form method="post" action="{{route('experience.store')}}" id="expform">
   @csrf
   <div class="form-group">
     <label for="title">Compony name</label>
@@ -23,11 +23,11 @@
     <label for="title">Description</label>
     <textarea name="desc" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
- 
   <button type="submit" class="btn btn-primary">Save</button>
 </form>
 </div>
 @endsection
 @section('footer')
 <script src="{{asset('js/page.js')}}"></script>
+<script src="{{asset('js/experience.js')}}"></script>
 @endsection
