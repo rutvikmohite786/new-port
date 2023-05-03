@@ -1,12 +1,12 @@
 @extends('layouts.admin')
 @section('content')
 <div class="container">
-<form method="post" action="{{route('portfolio.image.store')}}" enctype="multipart/form-data">
+<form method="post" action="{{route('portfolio.image.store')}}" enctype="multipart/form-data" id="portfolioimg">
   @csrf
   <div class="form-group">
     <label for="port">select portfolio</label>
     <select class="form-control" id="port" name="port_id">
-      <option>Please select portfolio</option>
+      <option value="">Please select portfolio</option>
       @foreach($data as $key => $value)
       <option value="{{$value->id}}">{{$value->title}}</option>
       @endforeach
@@ -22,4 +22,5 @@
 @endsection
 @section('footer')
 <script src="{{asset('js/page.js')}}"></script>
+<script src="{{asset('js/portfolioimg.js')}}"></script>
 @endsection

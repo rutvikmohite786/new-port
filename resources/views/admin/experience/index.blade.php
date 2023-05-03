@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="container">
+@include('admin.message')
     <a type="button" href="{{route('experience.add')}}" class="btn btn-primary">Add Data</a>
     <br>
     <table class="table">

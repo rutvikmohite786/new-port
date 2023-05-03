@@ -7,9 +7,10 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Title</th>
+      <th scope="col">Name</th>
+      <th scope="col">Image</th>
       <th scope="col">Description</th>
-      <th scope="col">Action</th>
+      <th scope="col">Designation</th>
     </tr>
   </thead>
   <tbody>
@@ -17,10 +18,11 @@
     @foreach($data as $key => $value)
     <tr>
       <th scope="row">{{$key+1}}</th>
-      <td>{{$value->title}}</td>
+      <td>{{$value->name}}</td>
       <td>{{$value->description}}</td>
-      <td> <a type="button" href="/admin/about/edit/{{$value->id}}" class="btn btn-primary update">update</a>
-      <a type="button" href="/admin/about/delete/{{$value->id}}" class="btn btn-danger delete">delete</a></td>
+      <td>{{$value->designation}}</td>
+      <td> <a type="button" href="/admin/team/edit/{{$value->id}}" class="btn btn-primary update">edit</a>
+      <a type="button" href="/admin/team/delete/{{$value->id}}" class="btn btn-danger delete">delete</a></td>
     </tr>
     @endforeach
     @else

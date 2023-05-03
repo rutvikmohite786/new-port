@@ -28,4 +28,8 @@ class TeamController extends Controller
             $save->save();
       }
     }
+    public function edit($id){
+      $data = Team::find($id);
+      return view('admin.team.add',compact('data'));
+    }
 }

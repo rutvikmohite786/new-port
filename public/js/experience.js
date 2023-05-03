@@ -1,9 +1,11 @@
 $(document).ready(function() {
-    $("#expform").validate({
+    $("#experienceform").validate({
         rules: {
             title: "required",
             desc:"required",
-            image:"required"
+            year:"required",
+            location:"required",
+            cname:"required"
         , }
     });
 });

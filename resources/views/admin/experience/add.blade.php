@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="container">
-<form method="post" action="{{route('experience.store')}}" id="expform">
+<form method="post" action="{{route('experience.store')}}" id="experienceform">
   @csrf
   <div class="form-group">
     <label for="title">Compony name</label>

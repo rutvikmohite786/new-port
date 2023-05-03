@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="container">
-<form method="post" action="{{route('porttech.store')}}">
+<form method="post" action="{{route('porttech.store')}}" id="porttechform">
   @csrf
   <div class="form-group">
     <label for="name">name</label>
@@ -13,4 +13,5 @@
 @endsection
 @section('footer')
 <script src="{{asset('js/page.js')}}"></script>
+<script src="{{asset('js/porttech.js')}}"></script>
 @endsection
