@@ -5,16 +5,19 @@
   @csrf
   <div class="form-group">
     <label for="title">Title</label>
-    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title">
+    <input name="title" type="text" class="form-control" id="title" value="{{$data->title}}" placeholder="Enter title">
   </div>
   <div class="form-group">
     <label for="tech">Example select</label>
     <select class="form-control" id="tech" name="tech">
       <option value="">Please select tech</option>
-      @foreach($data as $key => $value)
+      @foreach($portTech as $key => $value)
       <option value="{{$value->id}}">{{$value->name}}</option>
       @endforeach
     </select>
+  </div>
+  <div class="form-group">
+    <img src="{{asset('images/portfolio'.'/'.$data->image)}}" alt="Image" class="adminportimage">
   </div>
    <div class="form-group">
     <label for="image">Example file input</label>

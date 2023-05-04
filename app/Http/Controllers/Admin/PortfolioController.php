@@ -44,6 +44,7 @@ class PortfolioController extends Controller
     public function edit($id)
     {
         $data = Portfolio::find($id);
-        return view('admin.portfolio.edit', compact('data'));
+        $portTech = PortTech::all();
+        return view('admin.portfolio.edit', compact('data','portTech'));
     }
 }

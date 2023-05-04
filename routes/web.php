@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\PortTechController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\PortfolioImageController;
 use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\Admin\BlogController;
 
 
 /*
@@ -90,6 +91,13 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/admin/team/add', 'add')->name('team.add');
         Route::get('/admin/team/edit/{id}', 'edit')->name('team.edit');
         Route::post('/admin/team/store', 'store')->name('team.store');
+    });
+
+    Route::controller(BlogController::class)->group(function () {
+        Route::get('/admin/blog', 'index')->name('index.blog');
+        Route::get('/admin/blog/add', 'add')->name('blog.add');
+        Route::get('/admin/blog/edit/{id}', 'edit')->name('blog.edit');
+        Route::post('/admin/blog/store', 'store')->name('blog.store');
     });
 });
 

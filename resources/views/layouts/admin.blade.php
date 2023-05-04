@@ -285,7 +285,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/project-edit.html" class="nav-link">
+                                    <a href="{{route('index.blog')}}" class="nav-link {{ (request()->is('admin/blog*')) || (request()->is('admin/blog')) ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Blog</p>
                                     </a>

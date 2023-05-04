@@ -18,5 +18,4 @@
 @section('footer')
 <script src="{{asset('js/page.js')}}"></script>
 <script src="{{asset('js/about.js')}}"></script>
-
 @endsection
