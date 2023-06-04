@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="container">
-<form method="post" action="{{route('team.store')}}" enctype="multipart/form-data">
+<form method="post" action="{{route('team.store')}}" enctype="multipart/form-data" id="teamform">
   @csrf
   <div class="form-group">
     <label for="name">Name</label>
@@ -25,4 +25,6 @@
 @endsection
 @section('footer')
 <script src="{{asset('js/page.js')}}"></script>
+<script src="{{asset('js/team.js')}}"></script>
+
 @endsection
