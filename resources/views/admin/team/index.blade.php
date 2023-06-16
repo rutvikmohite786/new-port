@@ -36,5 +36,4 @@
 @endsection
 @section('footer')
 <script src="{{asset('js/page.js')}}"></script>
-<script src="{{asset('js/team.js')}}"></script>
 @endsection
