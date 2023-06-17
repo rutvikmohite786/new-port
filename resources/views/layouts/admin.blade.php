@@ -291,7 +291,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/contact-us.html" class="nav-link">
+                                    <a href="{{route('index.contact')}}" class="nav-link {{ (request()->is('admin/contact*')) || (request()->is('admin/contact')) ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Contact us</p>
                                     </a>

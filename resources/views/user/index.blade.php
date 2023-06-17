@@ -339,7 +339,7 @@
                 <div class="col-md-8">
                     <div class="contact-form">
                         <div id="success"></div>
-                        <form name="sentMessage" action="{{route('contact.store')}}" id="contactForm" method="post" novalidate="novalidate">
+                        <form action="{{route('contact.store')}}" id="contactForm" method="post" novalidate="novalidate">
                             @csrf
                             <div class="control-group">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
@@ -468,6 +468,13 @@
 @endsection
 @section('footer')
 <script>
-console.log('dataft')
+$(document).ready(function() {
+    $("#contactForm").validate({
+        rules: {
+            name: "required",
+            email:"required"
+        , }
+    });
+});
 </script>
 @endsection

@@ -40,11 +40,12 @@
     <script src="{{ asset('user/lib/owlcarousel/owl.carousel.min.js')}}"></script>
     <script src="{{ asset('user/lib/isotope/isotope.pkgd.min.js')}}"></script>
     <script src="{{ asset('user/lib/lightbox/js/lightbox.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="{{ asset('user/js/main.js')}}"></script>
 
     <!-- Contact Javascript File -->
-
+    @yield('footer')
     <!-- Template Javascript -->
-    <script src="{{ asset('user/js/main.js')}}"></script>
 </body>
 
 </html>
