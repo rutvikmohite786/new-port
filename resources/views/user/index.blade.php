@@ -112,9 +112,9 @@
                         <i class="fa fa-laptop"></i>
                     </div>
                     <div class="service-text">
-                        <h3>Web Design</h3>
+                        <h3>{{$value->title}}</h3>
                         <p>
-                            Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi facilis ornare velit non
+                            {{$value->description}}
                         </p>
                     </div>
                 </div>

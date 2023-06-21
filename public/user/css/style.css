@@ -6,7 +6,9 @@ body {
     background: #ffffff;
     font-family: 'Montserrat', sans-serif;
 }
-
+.error{
+    color:black;
+}
 h1,
 h2, 
 h3, 
