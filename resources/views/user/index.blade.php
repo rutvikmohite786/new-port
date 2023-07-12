@@ -67,11 +67,11 @@
                 <div class="about-content">
                     <div class="section-header text-left">
                         <p>Learn About Me</p>
-                        <h2>{{$about->title}}</h2>
+                        <h2>{{isset($about) ? $about->title : ''}}</h2>
                     </div>
                     <div class="about-text">
                         <p>
-                            {{$about->description}}
+                            {{isset($about) ? $about->description : ''}}
                         </p>
                     </div>
                     <div class="skills">
