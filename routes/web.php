@@ -111,12 +111,11 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::controller(HomePageController::class)->group(function () {
-    Route::get('/', 'index')->name('portfolio.page');
+    Route::get('/vggghjghghghgjjdhjhd%^%&%&*%*&%*&%%', 'index')->name('portfolio.page');
+    Route::get('/vggghjghghghgjjdhjhd%^%&%&*%*&%*&%%ghghh^&676', 'index')->name('portfolio.page.resume');
     Route::post('/contact/store', 'contactStore')->name('contact.store');
 });
 
 Route::controller(PortfolioController::class)->group(function () {
     Route::post('/detail/portfolio', 'portfolioDetail')->name('portfolio.detail');
 });
-
-
