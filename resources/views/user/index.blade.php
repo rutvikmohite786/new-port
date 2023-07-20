@@ -16,9 +16,12 @@
                 <a href="#service" class="nav-item nav-link">Service</a>
                 <a href="#experience" class="nav-item nav-link">Experience</a>
                 <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
+    
+                @if($_GET['id'] == config('key.freelancer_key'))
                 <a href="#price" class="nav-item nav-link">Price</a>
                 <a href="#review" class="nav-item nav-link">Review</a>
                 <a href="#team" class="nav-item nav-link">Team</a>
+                @endif
                 <a href="#blog" class="nav-item nav-link">Blog</a>
                 <a href="#contact" class="nav-item nav-link">Contact</a>
             </div>
@@ -96,7 +99,7 @@
 </div>
 <!-- About End -->
 
-
+@if($_GET['id'] == config('key.freelancer_key'))
 <!-- Service Start -->
 <div class="service" id="service">
     <div class="container">
@@ -109,7 +112,7 @@
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
                 <div class="service-item">
                     <div class="service-icon">
-                        <i class="fa fa-laptop"></i>
+                        <i class="{{$value->image}}"></i>
                     </div>
                     <div class="service-text">
                         <h3>{{$value->title}}</h3>
@@ -124,6 +127,7 @@
     </div>
 </div>
 <!-- Service End -->
+@endif
 
 <!-- Modal -->
 <div class="modaladd">
