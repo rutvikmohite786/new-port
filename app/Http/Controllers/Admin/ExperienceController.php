@@ -21,7 +21,8 @@ class ExperienceController extends Controller
             'description'=>$request->desc,
             'company_name'=>$request->cname,
             'location'=>$request->location,
-            'year'=>$request->year
+            'year'=>$request->year,
+            'for_use'=>$request->for_use
         ]);
         return redirect()->route('index.experience')->with('message','added');
     }
@@ -35,7 +36,9 @@ class ExperienceController extends Controller
             'description'=>$request->desc,
             'company_name'=>$request->cname,
             'location'=>$request->location,
-            'year'=>$request->year
+            'year'=>$request->year,
+            'for_use'=>$request->for_use
+
         ]);
         return redirect()->route('index.experience')->with('message','added');
     }

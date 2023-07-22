@@ -16,11 +16,17 @@ use App\Models\Team;
 class HomePageController extends Controller
 {
     public function index(){
-        $about=About::first();
+
+        if($_GET['id'] == config('key.freelancer_key')){
+          $about=About::where('for_use','freelancing')->first();
+          $experience = Experience::where('for_use','freelancing')->first();
+        }else{
+          $about=About::where('for_use','resume')->first();
+          $experience = Experience::where('for_use','resume')->first();
+        }
         $team = Team::all();
         $tech = Technology::all();
         $service = Service::all();
-        $experience = Experience::all();
         $porttech = PortTech::all();
         $portfolio = Portfolio::with('techport')->get();
         return view('user.index',compact('about','tech','service','experience','porttech','portfolio','team'));

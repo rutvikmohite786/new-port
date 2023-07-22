@@ -13,6 +13,7 @@ class Experience extends Model
         'description',
         'company_name',
         'location',
-        'year'
+        'year',
+        'for_use'
     ];
 }

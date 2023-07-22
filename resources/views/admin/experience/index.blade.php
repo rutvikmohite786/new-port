@@ -13,6 +13,7 @@
                 <th scope="col">Company</th>
                 <th scope="col">Location</th>
                 <th scope="col">year</th>
+                <th scope="col">For use</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -26,6 +27,7 @@
                 <td>{{$value->company_name}}</td>
                 <td>{{$value->location}}</td>
                 <td>{{$value->year}}</td>
+                <td>{{$value->for_use}}</td>
                 <td> <a type="button" href="/admin/experience/edit/{{$value->id}}" class="btn btn-primary update">edit</a>
                     <a type="button" href="/admin/experience/delete/{{$value->id}}" class="btn btn-danger delete">delete</a></td>
             </tr>

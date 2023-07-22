@@ -135,12 +135,13 @@
 </div>
 
 <!-- Experience Start -->
+@if($experience->count()>2)
 <div class="experience" id="experience">
     <div class="container">
         <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
             <p>My Resume</p>
             <h2>Working Experience</h2>
-        </header>
+        </header> 
         <div class="timeline">
             @foreach($experience as $key => $value)
 
@@ -159,6 +160,7 @@
         </div>
     </div>
 </div>
+@endif
 <!-- Job Experience End -->
 
 

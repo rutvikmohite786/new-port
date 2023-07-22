@@ -21,7 +21,8 @@ class AboutController extends Controller
    {
       About::create([
          'title' => $request->title,
-         'description' => $request->desc
+         'description' => $request->desc,
+         'for_use'=>$request->for_use
       ]);
       return redirect()->route('index.about')->with('message','added');
    }
@@ -34,7 +35,8 @@ class AboutController extends Controller
    {
       About::where('id', $request->id)->update([
          'title' => $request->title,
-         'description' => $request->desc
+         'description' => $request->desc,
+         'for_use'=>$request->for_use
       ]);
       return redirect()->route('index.about')->with('message','updated');
    }

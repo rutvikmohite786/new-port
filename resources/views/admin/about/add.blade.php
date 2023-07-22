@@ -8,12 +8,20 @@
     <input name="title" type="text" class="form-control" id="title" placeholder="Enter title">
   </div>
   <div class="form-group">
+    <label for="for_use">Please select</label>
+    <select class="form-control" name="for_use">
+      @foreach(config('key.foruse') as $data)
+      <option value="{{$data}}">{{$data}}</option>
+      @endforeach
+    </select>
+  </div>
+  <div class="form-group">
     <label for="title">Description</label>
     <textarea name="desc" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
   <button type="submit" class="btn btn-primary">Update</button>
 </form>
-</div>
+</div> 
 @endsection
 @section('footer')
 <script src="{{asset('js/page.js')}}"></script>

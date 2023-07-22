@@ -23,6 +23,14 @@
     <label for="title">Description</label>
     <textarea name="desc" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
+  <div class="form-group">
+    <label for="for_use">Please select</label>
+    <select class="form-control" name="for_use">
+      @foreach(config('key.foruse') as $data)
+      <option value="{{$data}}">{{$data}}</option>
+      @endforeach
+    </select>
+  </div>
   <button type="submit" class="btn btn-primary">Save</button>
 </form>
 </div>

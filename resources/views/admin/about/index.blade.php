@@ -10,6 +10,7 @@
       <th scope="col">#</th>
       <th scope="col">Title</th>
       <th scope="col">Description</th>
+      <th scope="col">For use</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -20,7 +21,8 @@
       <th scope="row">{{$key+1}}</th>
       <td>{{$value->title}}</td>
       <td>{{$value->description}}</td>
-      <td> <a type="button" href="/admin/about/edit/{{$value->id}}" class="btn btn-primary update">edit</a>
+      <td>{{$value->for_use}}</td>
+       <td> <a type="button" href="/admin/about/edit/{{$value->id}}" class="btn btn-primary update">edit</a>
       <a type="button" href="/admin/about/delete/{{$value->id}}" class="btn btn-danger delete">delete</a></td>
     </tr>
     @endforeach
