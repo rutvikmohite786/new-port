@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Team;
+use App\Models\Team; 
 
 class TeamController extends Controller
 {
@@ -26,6 +26,7 @@ class TeamController extends Controller
             $save->designation = $request->designation;
             $save->description  = $request->desc;
             $save->save();
+            return redirect()->route('index.experience')->with('message','added');
       }
     }
     public function edit($id){
