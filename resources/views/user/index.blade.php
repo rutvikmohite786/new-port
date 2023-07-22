@@ -135,7 +135,7 @@
 </div>
 
 <!-- Experience Start -->
-@if($experience->count()>2)
+@if($experience)
 <div class="experience" id="experience">
     <div class="container">
         <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
@@ -231,7 +231,7 @@
 <div class="banner wow zoomIn" data-wow-delay="0.1s">
     <div class="container">
         <div class="section-header text-center">
-            <p>Awesome Discount</p>
+            <p>Awesome Discount for college student</p>
             <h2>Get <span>30%</span> Discount</h2>
         </div>
         <div class="container banner-text">

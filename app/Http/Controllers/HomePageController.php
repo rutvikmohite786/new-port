@@ -19,10 +19,10 @@ class HomePageController extends Controller
 
         if($_GET['id'] == config('key.freelancer_key')){
           $about=About::where('for_use','freelancing')->first();
-          $experience = Experience::where('for_use','freelancing')->first();
+          $experience = Experience::where('for_use','freelancing')->get();
         }else{
           $about=About::where('for_use','resume')->first();
-          $experience = Experience::where('for_use','resume')->first();
+          $experience = Experience::where('for_use','resume')->get();
         }
         $team = Team::all();
         $tech = Technology::all();
