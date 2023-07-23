@@ -43,7 +43,7 @@
                     </div>
                     <div class="hero-btn">
                         <a class="btn" href="">Download CV</a>
-                        <a class="btn" href="">Contact Me</a>
+                        <a class="btn" href="#contactForm">Contact Me</a>
                     </div>
                 </div>
             </div>
@@ -86,9 +86,16 @@
                         </div>
                         @endforeach
 
-
+                        <h3>Laravel</h3>
                         <div class="progress">
                             <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <br>
+                        <div class="progresshide">
+                        <h3>Laravel</h3>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                         </div>
                     </div>
                     <a class="btn" href="">Learn More</a>
@@ -147,8 +154,8 @@
 
             <div class="timeline-item {{ $key%2==0 ? 'left' : 'right'}} wow {{$key%2==0 ? 'slideInLeft' : 'slideInRight'}}" data-wow-delay="0.1s">
                 <div class="timeline-text">
-                    <div class="timeline-date">2021 - 2023</div>
-                    <h2>{{$value->title}}({{$value->compony_name}})</h2>
+                    <div class="timeline-date">{{$value->year}}</div>
+                    <h2>{{$value->title}}({{$value->company_name}})</h2>
                     <h4>{{$value->location}}</h4>
                     <p>
                         {{$value->description}}
